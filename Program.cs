@@ -2,7 +2,8 @@
 using System.Data.SqlClient;
 class Program{
   public static void Main(string[] args){
-    Console.WriteLine("Hello World");
-    SqlConnection con = new SqlConnection(ConnectionString);
+    Student student = new Student();
+    student.displayOptions();
+    Console.Write("Hello World");
   }
 }

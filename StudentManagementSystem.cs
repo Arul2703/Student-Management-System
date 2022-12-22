@@ -20,7 +20,7 @@ class Student{
             Console.WriteLine("\n\tSTUDENT MANAGEMENT SYSTEM"); 
             Console.WriteLine("----------------------------------------");
             do{
-                Console.WriteLine("1. New Student\n2. View Student Details\n3. View All Student's Details\n4. Exit\n");
+                Console.WriteLine("1. New Student\n2. View Student Details\n3. View All Student's Details\n4. Update Student Details\n5. Exit\n");
                 Console.Write("\nSelect your choice : ");
                 int choice = 0;
                 bool IsConversionSuccessful = int.TryParse(Console.ReadLine(), out choice);
@@ -42,6 +42,9 @@ class Student{
                             viewStudentDetails(choice); break;
 
                         case 4:
+                            updateStudentDetails(); break;
+
+                        case 5:
                             return;
 
                         default:
@@ -106,7 +109,6 @@ class Student{
     mobileNumber = Convert.ToInt64(Console.ReadLine());
   }
   
-
   public void enterEmailId(){
     Console.WriteLine("Enter your Email Id: ");
     emailId = Console.ReadLine();
@@ -131,6 +133,7 @@ class Student{
     Console.WriteLine("Enter your CGPA: ");
     cgpa = float.Parse(Console.ReadLine());
   }
+
   public void insertStudentDetails(int registerNumber,string name,int age,string address,long mobileNumber,string emailId,string collegeName,string courseName,string specialization,float cgpa){
 
     // Connection String
@@ -190,7 +193,7 @@ class Student{
     }
     con.Close();
   }
-  /*public void viewAllStudentDetails(){
+  public void viewAllStudentDetails(){
     
     string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";  // Connection string
 
@@ -212,7 +215,30 @@ class Student{
     }
     con.Close();
   }
-  */
+
+  public void updateStudentDetails(){
+    Console.WriteLine("Enter register number and password: ");
+    int regNumber = Convert.ToInt32(Console.ReadLine());
+    string password = Console.ReadLine();
+
+    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";  // Connection string
+
+    SqlConnection con = new SqlConnection(ConnectionString);
+    con.Open();  
+    string displayQuery = "SELECT registerNo,password FROM studentdetails WHERE registerNo ="+regNumber+"";
+
+    SqlCommand displayCommand = new SqlCommand(displayQuery,con);
+    SqlDataReader dataReader = displayCommand.ExecuteReader(); 
+    while(dataReader.Read()){
+      int regNo = Convert.ToInt32(dataReader.GetValue(0));
+      string pwd = dataReader.GetValue(1).ToString();
+      if(regNumber == regNo && password.Equals(pwd)){
+        Console.Write("\nSelect the property which you want to update : ");
+        Console.WriteLine("\n1. Update Sno\n2. Update Name\n3. Update City\n4. Update Total Marks\n");
+      }
 
 
+    }
+    con.Close();
+  }
 }
