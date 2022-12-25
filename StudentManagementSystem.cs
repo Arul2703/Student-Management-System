@@ -16,7 +16,6 @@ class Student{
   public float cgpa;
 
   private string password;
-
   public void displayOptions(){ 
     char ch='n';
             Console.WriteLine("\n\tSTUDENT MANAGEMENT SYSTEM"); 
@@ -92,7 +91,6 @@ class Student{
             enterSpecialization();
             enterCgpa();
             enterPassword();
-            
             insertStudentDetails(registerNumber,name,age,address,mobileNumber,emailId,collegeName,courseName,specialization,cgpa);
                         
   }
@@ -145,32 +143,32 @@ class Student{
   }
 
   public void enterPassword(){
-    Console.WriteLine("\n ---- Set your Password ---- ");
-
+    Console.Write("Enter Password: ");
+    password = Console.ReadLine();
   }
 
   public void insertStudentDetails(int registerNumber,string name,int age,string address,long mobileNumber,string emailId,string collegeName,string courseName,string specialization,float cgpa){
 
     // Connection String
-    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";
+    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=IFET_StudentInfo;Integrated Security=True";
 
     // Establishing Connection
     SqlConnection con = new SqlConnection(ConnectionString);
     con.Open();
 
     // Insert Student details into database
-    string userquery = "INSERT INTO studentdetails(registerNo,name,age,address,mobileNumber,emailId,clgName,courseName,specialization,cgpa) VALUES("+registerNumber+",+'" +name+"',"+age+",'" +address+"',"+mobileNumber+",'" +emailId+"',+'"+collegeName+"','" +courseName+"','" +courseName+"',"+cgpa+")";
+    string userquery = "INSERT INTO studentdetails(registerNo,name,age,address,mobileNumber,emailId,clgName,courseName,specialization,cgpa,password) VALUES("+registerNumber+",+'" +name+"',"+age+",'" +address+"',"+mobileNumber+",'" +emailId+"',+'"+collegeName+"','" +courseName+"','" +courseName+"',"+cgpa+",'"+password+"'"+")";
 
     SqlCommand insertCommand = new SqlCommand(userquery,con);
 
     insertCommand.ExecuteNonQuery(); //is used to run command which does not return any data
-    Console.WriteLine("Data is successfully inserted into table");
+    Console.WriteLine("You're successfully registered...");
     con.Close();
   }
 
   public void viewStudentDetails(int choice){
 
-    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";
+    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=IFET_StudentInfo;Integrated Security=True";
     SqlConnection con = new SqlConnection(ConnectionString);
     con.Open();
 
@@ -201,7 +199,7 @@ class Student{
       "\nCollege Name: "+dataReader.GetValue(6).ToString()+
       "\nCourse Name: "+dataReader.GetValue(7).ToString()+
       "\nSpecialization: "+dataReader.GetValue(8).ToString()+
-      "\nSCGPA: "+dataReader.GetValue(9).ToString()
+      "\nCGPA: "+dataReader.GetValue(9).ToString()
       );
 
       Console.WriteLine();  
@@ -210,7 +208,7 @@ class Student{
   }
   public void viewAllStudentDetails(){
     
-    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";  // Connection string
+    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=IFET_StudentInfo;Integrated Security=True";  // Connection string
 
     SqlConnection con = new SqlConnection(ConnectionString);
     con.Open();  
@@ -235,8 +233,7 @@ class Student{
   public void updateStudentDetails(){
     char ch = 'n';
     bool isValidUser = false;
-    enterRegisterNumber();
-    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";  // Connection string
+    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=IFET_StudentInfo;Integrated Security=True";  // Connection string
 
     SqlConnection con = new SqlConnection(ConnectionString);
     con.Open();  
@@ -288,11 +285,10 @@ class Student{
 
           }
         }while(ch == 'y');
-      Console.WriteLine(updateQuery);
       SqlCommand updateCommand = new SqlCommand(updateQuery,con);
 
       updateCommand.ExecuteNonQuery(); //is used to run command which does not return any data
-      Console.WriteLine("Data is successfully inserted into table");
+      Console.WriteLine("\n ---- Successfully Updated. ---- ");
       con.Close();
 
   }
@@ -300,22 +296,21 @@ class Student{
 
   public bool authenticateUser(){
     bool isValidUser = false;
-    Console.WriteLine("Enter register number and password: ");
-    int regNumber = Convert.ToInt32(Console.ReadLine());
-    string password = Console.ReadLine();
+    enterRegisterNumber();
+    enterPassword();
 
-    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";  // Connection string
+    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=IFET_StudentInfo;Integrated Security=True";  // Connection string
 
     SqlConnection con = new SqlConnection(ConnectionString);
     con.Open();  
-    string displayQuery = "SELECT registerNo,password FROM studentdetails WHERE registerNo ="+regNumber+"";
+    string displayQuery = "SELECT registerNo,password FROM studentdetails WHERE registerNo ="+registerNumber+"";
 
     SqlCommand displayCommand = new SqlCommand(displayQuery,con);
     SqlDataReader dataReader = displayCommand.ExecuteReader(); 
     while(dataReader.Read()){
       int regNo = Convert.ToInt32(dataReader.GetValue(0));
       string pwd = dataReader.GetValue(1).ToString();
-      if(regNumber == regNo && password.Equals(pwd)){
+      if(registerNumber == regNo && password.Equals(pwd)){
         isValidUser = true;
         return isValidUser;
       }
