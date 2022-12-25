@@ -7,13 +7,15 @@ class Student{
   public string name;
   public int age;
   public string address;
-  public long mobileNumber;
+  private long mobileNumber;
   public string emailId;
   public string collegeName;
 
   public string courseName;
   public string specialization;
   public float cgpa;
+
+  private string password;
 
   public void displayOptions(){ 
     char ch='n';
@@ -42,7 +44,13 @@ class Student{
                             viewStudentDetails(choice); break;
 
                         case 4:
-                            updateStudentDetails(); break;
+                            if(authenticateUser()){
+                              updateStudentDetails(); break;
+                            }
+                            else{
+                              Console.WriteLine("Sorry, Your user id or password might be incorrect.");
+                              break;
+                            }
 
                         case 5:
                             return;
@@ -69,8 +77,8 @@ class Student{
   }
 
   public void enterDetails()
-  {
-            Console.WriteLine("\n\nPlease provide the details below");
+  {         Console.WriteLine("--------------REGISTER NOW--------------");
+            Console.WriteLine("\nPlease provide the details below");
             Console.WriteLine("+++++++++++++++++++++++++++++++++");
             
             enterRegisterNumber();
@@ -83,6 +91,8 @@ class Student{
             enterCourseName();
             enterSpecialization();
             enterCgpa();
+            enterPassword();
+            
             insertStudentDetails(registerNumber,name,age,address,mobileNumber,emailId,collegeName,courseName,specialization,cgpa);
                         
   }
@@ -134,6 +144,11 @@ class Student{
     cgpa = float.Parse(Console.ReadLine());
   }
 
+  public void enterPassword(){
+    Console.WriteLine("\n ---- Set your Password ---- ");
+
+  }
+
   public void insertStudentDetails(int registerNumber,string name,int age,string address,long mobileNumber,string emailId,string collegeName,string courseName,string specialization,float cgpa){
 
     // Connection String
@@ -182,7 +197,7 @@ class Student{
       "\nAge: "+dataReader.GetValue(2).ToString()+
       "\nAddress: "+dataReader.GetValue(3).ToString()+
       "\nMobile Number: "+dataReader.GetValue(4).ToString()+
-      "Email Id: "+dataReader.GetValue(5).ToString()+
+      "\nEmail Id: "+dataReader.GetValue(5).ToString()+
       "\nCollege Name: "+dataReader.GetValue(6).ToString()+
       "\nCourse Name: "+dataReader.GetValue(7).ToString()+
       "\nSpecialization: "+dataReader.GetValue(8).ToString()+
@@ -216,7 +231,75 @@ class Student{
     con.Close();
   }
 
+
   public void updateStudentDetails(){
+    char ch = 'n';
+    bool isValidUser = false;
+    enterRegisterNumber();
+    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";  // Connection string
+
+    SqlConnection con = new SqlConnection(ConnectionString);
+    con.Open();  
+
+    string updateQuery = "SELECT * FROM studentdetails";
+    do{
+          Console.Write("\nSelect the property which you want to update : ");
+          Console.WriteLine("\n1. Update Name\n2. Update Age\n3. Update Address\n4. Update Email Id\n5. Update College Name\n6. Update Course Name\n7. Update Specialization");
+
+          int choice = 0;
+          Console.WriteLine("Enter your choice: ");
+          choice = Convert.ToInt32(Console.ReadLine());
+          switch(choice){
+            case 1:
+              enterName();
+              updateQuery = "UPDATE studentdetails SET name ='"+name+"' WHERE registerNo = "+registerNumber+"";
+              break;
+
+            case 2:
+              enterAge();
+              updateQuery = "UPDATE studentdetails SET age ="+age+"WHERE registerNo="+registerNumber+"";
+              break;
+
+            case 3:
+              enterAddress();
+              updateQuery = "UPDATE studentdetails SET address ='"+address+"'WHERE registerNo = "+registerNumber+"";
+              break;
+
+            case 4:
+              enterEmailId();
+              updateQuery = "UPDATE studentdetails SET emailId ='"+emailId+"'WHERE registerNo = "+registerNumber+"";
+              break;
+
+            case 5:
+              enterCollegeName();
+              updateQuery = "UPDATE studentdetails SET clgName ='"+collegeName+"'WHERE registerNo = "+registerNumber+"";
+              break;
+            
+            case 6:
+              enterCourseName();
+              updateQuery = "UPDATE studentdetails SET courseName ='"+courseName+"'WHERE registerNo = "+registerNumber+"";
+              break;
+
+            case 7:
+              enterSpecialization();
+              updateQuery = "UPDATE studentdetails SET specialization ='"+specialization+"'WHERE registerNo = "+registerNumber+"";
+              break;
+
+
+          }
+        }while(ch == 'y');
+      Console.WriteLine(updateQuery);
+      SqlCommand updateCommand = new SqlCommand(updateQuery,con);
+
+      updateCommand.ExecuteNonQuery(); //is used to run command which does not return any data
+      Console.WriteLine("Data is successfully inserted into table");
+      con.Close();
+
+  }
+
+
+  public bool authenticateUser(){
+    bool isValidUser = false;
     Console.WriteLine("Enter register number and password: ");
     int regNumber = Convert.ToInt32(Console.ReadLine());
     string password = Console.ReadLine();
@@ -233,12 +316,10 @@ class Student{
       int regNo = Convert.ToInt32(dataReader.GetValue(0));
       string pwd = dataReader.GetValue(1).ToString();
       if(regNumber == regNo && password.Equals(pwd)){
-        Console.Write("\nSelect the property which you want to update : ");
-        Console.WriteLine("\n1. Update Sno\n2. Update Name\n3. Update City\n4. Update Total Marks\n");
+        isValidUser = true;
+        return isValidUser;
       }
-
-
     }
-    con.Close();
+    return false;
   }
 }
