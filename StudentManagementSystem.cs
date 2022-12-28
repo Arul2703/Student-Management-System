@@ -1,3 +1,9 @@
+// Title: Student Management System
+// Author : Arularasi J
+// Created at : 20/12/2022
+// Updated at : 25/12/2022
+// Reviewed by: 
+// Reviewed at: 
 using System.Data;
 using System.Data.SqlClient;
 class Student{
@@ -8,7 +14,7 @@ class Student{
   public int age;
   public string address;
   private long mobileNumber;
-  public string emailId;
+  private string emailId;
   public string collegeName;
 
   public string courseName;
@@ -16,6 +22,7 @@ class Student{
   public float cgpa;
 
   private string password;
+
   public void displayOptions(){ 
     char ch='n';
             Console.WriteLine("\n\tSTUDENT MANAGEMENT SYSTEM"); 
@@ -116,7 +123,6 @@ class Student{
     Console.WriteLine("Enter your Mobile Number:");
     mobileNumber = Convert.ToInt64(Console.ReadLine());
   }
-  
   public void enterEmailId(){
     Console.WriteLine("Enter your Email Id: ");
     emailId = Console.ReadLine();
@@ -206,30 +212,7 @@ class Student{
     }
     con.Close();
   }
-  public void viewAllStudentDetails(){
-    
-    string ConnectionString = @"Data Source=LAPTOP-HS0OJSCM\SQLEXPRESS;Initial Catalog=IFET_StudentInfo;Integrated Security=True";  // Connection string
-
-    SqlConnection con = new SqlConnection(ConnectionString);
-    con.Open();  
-
-    // RETRIEVING DATA FROM DATABASE USING C#
-    string displayQuery = "SELECT * FROM studentdetails";
-
-    SqlCommand displayCommand = new SqlCommand(displayQuery,con);
-
-    // ExecuteReader method is used to execute command which returns some value.
-    SqlDataReader dataReader = displayCommand.ExecuteReader(); 
-
-    while(dataReader.Read()){
-
-      Console.WriteLine("Register Number:\t"+dataReader.GetValue(0).ToString()+"\tName:\t"+dataReader.GetValue(1).ToString()+"\tAge\t"+dataReader.GetValue(2).ToString()+"\tAddress\t"+dataReader.GetValue(3).ToString());
-
-    }
-    con.Close();
-  }
-
-
+  
   public void updateStudentDetails(){
     char ch = 'n';
     bool isValidUser = false;
