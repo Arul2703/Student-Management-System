@@ -1,9 +1,6 @@
-﻿using System.Data;
-using System.Data.SqlClient;
-class Program{
+﻿class Program{
   public static void Main(string[] args){
-    Student student = new Student();
-    student.displayOptions();
-
+    User user = new User();
+    user.showOptions();
   }
 }
