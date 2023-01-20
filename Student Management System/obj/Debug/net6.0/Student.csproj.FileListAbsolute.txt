@@ -1,0 +1,66 @@
+C:\Users\Arularasi\Desktop\Student\obj\Debug\net6.0\Student.csproj.AssemblyReference.cache
+C:\Users\Arularasi\Desktop\Student\obj\Debug\net6.0\Student.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Arularasi\Desktop\Student\obj\Debug\net6.0\Student.AssemblyInfoInputs.cache
+C:\Users\Arularasi\Desktop\Student\obj\Debug\net6.0\Student.AssemblyInfo.cs
+C:\Users\Arularasi\Desktop\Student\obj\Debug\net6.0\Student.csproj.CoreCompileInputs.cache
+C:\Users\Arularasi\Desktop\Student\bin\Debug\net6.0\Student.exe
+C:\Users\Arularasi\Desktop\Student\bin\Debug\net6.0\Student.deps.json
+C:\Users\Arularasi\Desktop\Student\bin\Debug\net6.0\Student.runtimeconfig.json
+C:\Users\Arularasi\Desktop\Student\bin\Debug\net6.0\Student.dll
+C:\Users\Arularasi\Desktop\Student\bin\Debug\net6.0\Student.pdb
+C:\Users\Arularasi\Desktop\Student\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\Arularasi\Desktop\Student\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Arularasi\Desktop\Student\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\Arularasi\Desktop\Student\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\Arularasi\Desktop\Student\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Arularasi\Desktop\Student\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Arularasi\Desktop\Student\obj\Debug\net6.0\Student.csproj.CopyComplete
+C:\Users\Arularasi\Desktop\Student\obj\Debug\net6.0\Student.dll
+C:\Users\Arularasi\Desktop\Student\obj\Debug\net6.0\refint\Student.dll
+C:\Users\Arularasi\Desktop\Student\obj\Debug\net6.0\Student.pdb
+C:\Users\Arularasi\Desktop\Student\obj\Debug\net6.0\Student.genruntimeconfig.cache
+C:\Users\Arularasi\Desktop\Student\obj\Debug\net6.0\ref\Student.dll
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\bin\Debug\net6.0\Student.exe
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\bin\Debug\net6.0\Student.deps.json
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\bin\Debug\net6.0\Student.runtimeconfig.json
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\bin\Debug\net6.0\Student.dll
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\bin\Debug\net6.0\Student.pdb
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\obj\Debug\net6.0\Student.csproj.AssemblyReference.cache
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\obj\Debug\net6.0\Student.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\obj\Debug\net6.0\Student.AssemblyInfoInputs.cache
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\obj\Debug\net6.0\Student.AssemblyInfo.cs
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\obj\Debug\net6.0\Student.csproj.CoreCompileInputs.cache
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\obj\Debug\net6.0\Student.csproj.CopyComplete
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\obj\Debug\net6.0\Student.dll
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\obj\Debug\net6.0\refint\Student.dll
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\obj\Debug\net6.0\Student.pdb
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\obj\Debug\net6.0\Student.genruntimeconfig.cache
+C:\Users\Arularasi\Desktop\Application\Student Management System After Review\obj\Debug\net6.0\ref\Student.dll
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\bin\Debug\net6.0\Student.exe
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\bin\Debug\net6.0\Student.deps.json
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\bin\Debug\net6.0\Student.runtimeconfig.json
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\bin\Debug\net6.0\Student.dll
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\bin\Debug\net6.0\Student.pdb
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\obj\Debug\net6.0\Student.csproj.AssemblyReference.cache
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\obj\Debug\net6.0\Student.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\obj\Debug\net6.0\Student.AssemblyInfoInputs.cache
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\obj\Debug\net6.0\Student.AssemblyInfo.cs
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\obj\Debug\net6.0\Student.csproj.CoreCompileInputs.cache
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\obj\Debug\net6.0\Student.csproj.CopyComplete
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\obj\Debug\net6.0\Student.dll
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\obj\Debug\net6.0\refint\Student.dll
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\obj\Debug\net6.0\Student.pdb
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\obj\Debug\net6.0\Student.genruntimeconfig.cache
+C:\Users\Arularasi\Desktop\Aspire Systems Programs (.NET)\REVIEW\SL Review\Student Management System\obj\Debug\net6.0\ref\Student.dll
